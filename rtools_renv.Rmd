@@ -112,7 +112,8 @@ ggplot(data = cars, mapping = aes(x = speed, y = dist)) +
 renv::snapshot()
 ```
 
-> renv::snapshot()
+Running renv::snapshot() updates the `renv.lock` file with the new packages, with feedback as follows (looks like there are lots of dependencies for the ggplot2 package):
+
 The following package(s) will be updated in the lockfile:
 
 # CRAN ===============================
@@ -161,3 +162,5 @@ The following package(s) will be updated in the lockfile:
 - withr          [* -> 2.4.3]
 - xfun           [* -> 0.29]
 - yaml           [* -> 2.2.2]
+
+These packages now appear in the lock file.
