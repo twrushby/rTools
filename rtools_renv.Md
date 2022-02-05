@@ -8,15 +8,17 @@ An environment manager for R projects. Meaning that it organises the package dep
 
 Refer to [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) by Kevin Ushey.
 
+Using `renv` might help to make collaboration that little bit simpler. See [Collaborating with renv](https://rstudio.github.io/renv/articles/collaborating.html)
+
 ### Install
 
-Start by installing the [renv]() package
+Start by installing the [renv]() package.
 
 ```
 install.packages('renv')
 ```
 
-Open your project and initialise renv to create a project specific local environment with private R library.
+Open your project and initialise renv to create a project specific local environment and R library.
 
 ```
 renv::init()
@@ -64,6 +66,8 @@ This project already has a lockfile. What would you like to do?
 3: Activate the project without snapshotting or installing any packages.
 4: Abort project initialization.
 ```
+
+The initialisation ensures that any time the 
 
 ### Lock file
 
