@@ -6,13 +6,15 @@ Using [renv for R projects](https://rstudio.github.io/renv/index.html)
 
 An environment manager for R projects. Meaning that it organises the package dependencies within an R project, recording the versions of each package used in analysis and allowing simply transport of projects from one computer to another.
 
+Could be a useful solution to package persistence problems when [using RStudio within the University SVE](https://git.soton.ac.uk/SERG/workflow/-/blob/master/howTo/sve.md)?
+
 Refer to [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) by Kevin Ushey.
 
 Using `renv` might help to make collaboration that little bit simpler. See [Collaborating with renv](https://rstudio.github.io/renv/articles/collaborating.html)
 
 ### Install
 
-Start by installing the [renv]() package.
+Start by installing the [renv](https://rstudio.github.io/renv/) package.
 
 ```
 install.packages('renv')
