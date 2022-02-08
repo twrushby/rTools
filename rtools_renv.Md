@@ -246,3 +246,75 @@ At [SERG](https://energy.soton.ac.uk) we like to work in a collaborative manner 
 
 The `renv` package allows all of the packages used in a specific project to be (re)installed using a single command - very useful for porting projects across different computers/contributors.
 
+## Loading a project on a different machine
+
+If the computer on which you open the intialised project does not have the `renv` package installed, the feedback in the console should indicate that it has been installed and loaded ...
+
+```
+# Bootstrapping renv 0.15.2 --------------------------------------------------
+* Downloading renv 0.15.2 ... OK (downloaded binary)
+* Installing renv 0.15.2 ... Done!
+* Successfully installed and loaded renv 0.15.2.
+* Project '~/SotonGitLab/Personal/rtools' loaded. [renv 0.15.2]
+```
+
+If the version of R differs on the new computer, this will be flagged ...
+
+```
+Warning message:
+This project is configured to use R version '4.1.1', but '4.0.3' is currently being used. 
+* The project library is out of sync with the lockfile.
+* Use `renv::restore()` to install packages recorded in the lockfile.
+> 
+```
+
+Running the `renv::restore()` command will generate a list of packages that will be installed and/or updated. For example, moving from the University's SVE to my own laptop generated the following:
+
+```
+> renv::restore()
+The following package(s) will be updated:
+
+# CRAN ===============================
+- MASS          [7.3-53 -> 7.3-54]
+- Matrix        [1.2-18 -> 1.3-4]
+- R6            [2.5.0 -> 2.5.1]
+- cli           [2.1.0 -> 3.1.1]
+- colorspace    [1.4-1 -> 2.0-2]
+- crayon        [1.3.4 -> 1.4.2]
+- digest        [0.6.27 -> 0.6.29]
+- ellipsis      [0.3.1 -> 0.3.2]
+- fansi         [0.4.1 -> 1.0.2]
+- farver        [2.0.3 -> 2.1.0]
+- fastmap       [1.0.1 -> 1.1.0]
+- glue          [1.4.2 -> 1.6.1]
+- highr         [0.8 -> 0.9]
+- htmltools     [0.5.0 -> 0.5.2]
+- isoband       [0.2.2 -> 0.2.5]
+- jsonlite      [1.7.1 -> 1.7.3]
+- knitr         [1.30 -> 1.37]
+- lattice       [0.20-41 -> 0.20-44]
+- lifecycle     [0.2.0 -> 1.0.1]
+- magrittr      [1.5 -> 2.0.2]
+- mgcv          [1.8-33 -> 1.8-36]
+- nlme          [3.1-149 -> 3.1-152]
+- pillar        [1.4.6 -> 1.7.0]
+- rlang         [0.4.10 -> 1.0.0]
+- rmarkdown     [2.5 -> 2.11]
+- stringi       [1.5.3 -> 1.7.6]
+- tibble        [3.0.4 -> 3.1.6]
+- tinytex       [0.27 -> 0.36]
+- utf8          [1.1.4 -> 1.2.2]
+- vctrs         [0.3.4 -> 0.3.8]
+- viridisLite   [0.3.0 -> 0.4.0]
+- withr         [2.3.0 -> 2.4.3]
+- xfun          [0.19 -> 0.29]
+- yaml          [2.2.1 -> 2.2.2]
+- jquerylib     [* -> 0.1.4]
+
+Do you want to proceed? [y/N]:
+```
+
+The list shows the packages in the lockfile that would be updated by the restore command. Note the prompt for confirmation to proceed with package updates.
+
+
+
