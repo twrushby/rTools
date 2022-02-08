@@ -244,11 +244,5 @@ The `renv::restore()` command allows a previous snapshot of packages (including 
 
 At [SERG](https://energy.soton.ac.uk) we like to work in a collaborative manner ... this often means sharing analysis and code across platforms. To that end we need packages/libraries used within RStudio in any piece of analysis to be restored easily on another system. 
 
-The `renv` package allows all of the packages used in a specific project to be (re)installed using a single command - very useful for porting projects across different computers/contributers.
+The `renv` package allows all of the packages used in a specific project to be (re)installed using a single command - very useful for porting projects across different computers/contributors.
 
-
-## Package libraries
-
-
-
-```
