@@ -6,7 +6,11 @@ Using [renv for R projects](https://rstudio.github.io/renv/index.html)
 
 An environment manager for R projects. Meaning that it organises the package dependencies within an R project, recording the versions of each package used in analysis and allowing simply transport of projects from one computer to another.
 
-Could be a useful solution to package persistence problems when [using RStudio within the University SVE](https://git.soton.ac.uk/SERG/workflow/-/blob/master/howTo/sve.md)?
+This is achieved through the creation of package 'snapshots' which can be (re)installed (or 'restored') on different computers with one simple command.
+
+`renv` provides an alternative solution to our [workflow/loadLibraries function](https://git.soton.ac.uk/SERG/workflow/-/blob/master/R/loadLibraries.R) and can tackle package persistence problems when [using RStudio within the University SVE](https://git.soton.ac.uk/SERG/workflow/-/blob/master/howTo/sve.md).
+
+Advantages of using `renv` over `woRkflow::loadLibraries()` is that `renv` automatically scans the code in a project to compile a list of packages used. `renv::snapshot()` also stores information on package versions. Nice!
 
 Refer to [Introduction to renv](https://rstudio.github.io/renv/articles/renv.html) by Kevin Ushey.
 
@@ -69,7 +73,7 @@ This project already has a lockfile. What would you like to do?
 4: Abort project initialization.
 ```
 
-The initialisation ensures that any time the 
+The initialisation command ensures that any time the project is opened, a check is performed to ensure that the `renv` package is installed on the system and that the package is loaded to give access to the `renv::restore()` command (see 'Restore' below).
 
 ### Lock file
 
@@ -230,9 +234,11 @@ The packages now appear in the contents of the lock file as shown below ...
 
 ## Restore
 
-An easy way to install all packages related to a specific project?
+The `renv::restore()` command allows a previous snapshot of packages (including package versions) to be installed.
 
-At [SERG](https://energy.soton.ac.uk) we like to work in a collaborative manner ... this often means sharing analysis and code across platforms. To that end we need packages/libraries used within RStudio in any piece of analysis to be restored easily on another system. Luckily renv gives us a useful way to do this with a single command: `restore()` (Nice!).
+At [SERG](https://energy.soton.ac.uk) we like to work in a collaborative manner ... this often means sharing analysis and code across platforms. To that end we need packages/libraries used within RStudio in any piece of analysis to be restored easily on another system. 
+
+The `renv` package allows all of the packages used in a specific project to be (re)installed using a single command - very useful for porting projects across different computers/contributers.
 
 
 ## Package libraries
