@@ -1,6 +1,6 @@
 # Using renv to create reproducible environments for R projects
 
-Using [renv for R projects](https://rstudio.github.io/renv/index.html)
+Reference: [renv for R projects](https://rstudio.github.io/renv/index.html)
 
 ## What is renv?
 
@@ -74,6 +74,12 @@ This project already has a lockfile. What would you like to do?
 ```
 
 The initialisation command ensures that any time the project is opened, a check is performed to ensure that the `renv` package is installed on the system and that the package is loaded to give access to the `renv::restore()` command (see 'Restore' below).
+
+The use of `renv` is confirmed on opening a project by feedback in the console, for example:
+
+```
+* Project 'H:/SVE/git.soton/rtools' loaded. [renv 0.15.2]
+```
 
 ### Lock file
 
