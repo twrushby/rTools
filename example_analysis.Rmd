@@ -1,0 +1,26 @@
+---
+title: "Example analysis"
+author: "Tom Rushby (@tom_rushby)"
+date: "28/01/2022"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Some generic analysis
+
+Some code requiring another package ...
+
+```{r}
+# install.packages("ggplot2")
+library(ggplot2)
+```
+Create a plot using built-in dataset `cars` ...
+
+```{r}
+ggplot(data = cars, mapping = aes(x = speed, y = dist)) +
+  geom_point() +
+  labs(caption = "Example plot by T Rushby")
+```
